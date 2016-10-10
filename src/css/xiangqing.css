@@ -1,5 +1,7 @@
 
-
+img{
+	  border: none;
+}
 
 .h2-lujing{
 	width: 1198px;
@@ -585,19 +587,213 @@
 
 
 
+/**************详情**********/
+
+.xiangqing{
+	 width: 1198px;
+	 margin: 0 auto;
+	 margin-top: 10px;
+}
 
 
 
+.side-left{
+	 width: 180px;
+	 float: left;
+}
+
+
+.diannei{
+    width: 178px;
+    height: 130px;
+    border: 1px solid #CCCCCC;	  
+	 margin-bottom: 15px;
+}
+
+.diannei h3{
+	   width: 178px;
+	   height: 30px;
+	   border-bottom: 1px solid #CCCCCC;
+	   background-color: #f7f5f5;
+	   line-height: 30px;
+	   text-indent: 10px;
+	   font-size: 13px;
+}
+
+.diannei p{
+	  color: #666;
+	 text-indent: 10px;
+}
+
+.input-text{
+	  border: none;
+	 border: 1px solid #ccc;
+	  width: 50px;
+	  height: 22px;
+	  margin-left: 70px;
+	  margin-top: 5px;
+} 
+
+.diannei p input{
+	 border: none;
+	 border: 1px solid #ccc;
+	  width: 40px;
+	  height: 22px;
+}
+
+.diannei  .form-p{
+	 margin-top: 5px;
+	 margin-bottom: 5px;
+}
+
+.diannei  .form-p input{
+	 border: none;
+	 border: 1px solid #ccc;
+	 width: 103px;
+}
+
+.shoufeng{
+	   width: 178px;
+	   border: 1px solid #ccc;
+	   margin-bottom: 20px;
+}
+
+.shoufeng h2{
+	  width: 178px;
+	  height: 30px;
+	  border-bottom: 1px solid #ccc;
+	  background-color: #f7f5f5;
+	  text-indent: 30px;
+	  line-height: 30px;
+}
+
+.shoufeng  div{
+	  padding: 5px;
+}
+
+.quanbu{
+	  font-weight: bold;
+}
+
+.shoufeng div p{
+	    text-indent: 20px;
+	    line-height: 24px;
+	    
+}
+
+.shoufeng div p a{
+	 color: #333;
+}
+
+.shoufeng div p a:hover{
+	    color: #FC1212;
+}
+
+
+.cuxiao{
+	  width: 178px;
+	  border: 1px solid #ccc;
+}
+
+.cuxiao h3{
+	  width: 178px;
+	  height: 33px;
+	  line-height: 33px;
+	  text-indent: 15px;
+	  border-bottom: 1px solid #ccc;
+	  background-color: #f7f5f5;
+}
+
+
+.cuxiao dl{
+	   width: 168px;
+	   margin-left: 5px;
+}
+
+.cuxiao dl dt{
+	   width: 168px;
+	   height: 180px;
+	   margin-bottom: 5px;
+}
+
+.cuxiao dl dt img{
+	  margin-top: 10px;
+}
+
+.cuxiao dl dd{
+	 width: 158px;
+	 margin-left: 5px;
+	   line-height: 24px;
+}
+
+.cuxiao dl dd span{
+	  margin-left: 30px;
+	  text-indent: 10px;
+	  color: #C40000;
+}
+
+.cuxiao dl dd del{
+	  margin-left: 10px;
+	  color: #999;
+}
+
+.cuxiao dl dd a{
+	  color: #333;
+}
+
+.cuxiao dl dd a:hover{
+	   color: #FC1212;
+}
 
 
 
+/**********详情图片************/
+
+.side-middle{
+	 width: 1000px;
+	 float: right;
+}
+
+.side-ul{
+	   width: 1000px;
+	   height: 33px;
+	  background-color: #f7f5f5;
+	   border: 1px solid #ccc; 
+}
+
+.side-ul li{
+	  float: left;
+	  padding:  0  15px;
+	  height: 30px;
+	  line-height: 30px;
+}
+
+.side-ul li:hover{
+	     color: #c40000;
+	}
+.side-ul li span{
+	  color: #FC1212;
+}
+
+.side-ul li.acli{
+	  background-color: #fff;
+	  border-top: 2px solid #C00;
+}
 
 
+.taocan{
+	  width: 900px;
+}
 
+.taocan p{
+	   line-height: 25px;
+	   margin-top: 10px;
+	   margin-bottom: 5px;
+}
 
-
-
-
+.taocan p span{
+	   font-weight: bold;
+}
 
 
 

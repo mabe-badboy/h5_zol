@@ -119,6 +119,13 @@ a:hover{
 	float: left;
 	margin-top: 10px;
 }
+
+
+/***********购物车的数量**********/
+.car-number{
+	  color: #FC1212;
+}
+
 /************顶***右***********/
 .ul2{
 	 height: 30px;

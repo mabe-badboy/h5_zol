@@ -28,7 +28,7 @@
 			var $smallImg = $('img',$self);
 
 			// 如果没有data-big属性，则直接使用小图的src属性
-			var bigUrl = $smallImg.attr('data-big') || $smallImg.attr('src');
+		//	var bigUrl = $smallImg.attr('data-big') || $smallImg.attr('src');
 
 			// 执行初始化操作
 			$smallImg.load(function(){
@@ -87,6 +87,9 @@
 
 			// 初始化
 			function init(){
+				
+			var bigUrl = $smallImg.attr('data-big') || $smallImg.attr('src');
+				
 				// 添加全局类名xzoom
 				$self.addClass('xzoom').width($smallImg.outerWidth());
 

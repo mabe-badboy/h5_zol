@@ -202,9 +202,72 @@
 						  height:180
 					});
 		
-			
-			
+			  //购物车的图片飞的效果
+			  
+			  var $zoomImg=$("#glass-img");
+			  var $Btn2=$("#btn2");
+			  var $car=$(".right-car");
+			  var $carNum=$(".car-number");
+			  var $car_1=$("#car");
+			  
+			  
+			  $Btn2.on("click",function(){
+			  	
+			  	   //克隆一下图片
+			  	    var $cloneImg=$zoomImg.clone();
+			  	    //获取初始的宽 和位置
+			  	    var startPos=$zoomImg.offset();
+			  	    var startWidth=$zoomImg.width();
+			  	    
+			  	    //定义位置
+			  	    $cloneImg.css({
+			  	    	
+			  	    	  position:"absolute",
+			  	    	  width:startWidth,
+			  	    	  left:startPos.left,
+			  	    	top:startPos.top
+			  	    });
+			  	
+			  	 $cloneImg.appendTo("body");
+			  	
+			  	//获取购物车的位置
+			  	var $carPos=$car.offset();
+			  	
+			  	  //让其一运动的方式向购物车靠近 并逐渐消失  
+			  	  
+			  	  $cloneImg.animate({left:$carPos.left,top:$carPos.top,width:0,opacity:"0"},function(){
+			  	  	
+			  	  	  // 当克隆的图片 动作执行完毕之后 删除它  以免存在造成页面承载过大
+			  	   	     		  $cloneImg.remove();
+			  	   	     		  
+			  	   	     		  var $str1=$carNum.html();
+			  	   	     		   $str1++;
+			  	   	     		 $carNum.html($str1);  
+			  	   	     		 
+			  	   	     		   var $str2=$car_1.html();
+			  	   	     		   $str2++;
+			  	   	     		 $car_1.html($str2);  
+			  	  	
+			  	  });
+			  	
+			  });
+			  
+			  
+			  
+			 //手风琴效果
+			  
+			   var $h2_show=$(".shoufeng h2:gt(0)");
+			$h2_show.on("click",function(){
+				    $(this).next().toggle();
+			});
 			 
+			 
+			 
+			 //参数处的切换
+			 $(".side-ul li").eq(0).addClass("acli");
+			 $(".side-ul li:lt(8)").on("click",function(){
+			 	     $(this).addClass("acli").siblings().removeClass("acli");
+			 });
 			 
 	 });
 		</script>
@@ -215,12 +278,12 @@
 			  <ul class="ul1">
 			  	   <li>商城首页</li>
 			  	   <li><span>Hi`欢迎来到ZOL商城 , </span><a href="html/denglv.html" id="denglv"> 登录</a></li>
-			  	   <li><a href="html/zhuce.html">免费注册</a></li>
+			  	   <li><a href="html/zhuce.html">退出</a></li>
 			  </ul> 
 			  <ul class="ul2">
 			  	     <li><a hrel="#">我的订单</a></li>
 			  	     <li>买家中心<img src="../img/point.png"/></li>
-			  	     <li>购物车<span>0</span>件</li>
+			  	     <li>购物车<span class="car-number">0</span>件</li>
 			  	     <li class="border_right"><a href="#">帮助中心</a></li>
 			  	     <li class="a_line"><img class="img" src="../img/p_p.jpg"/><span>手机商城</span><img class="img1" src="../img/point.png"/></li>
 			  	     <li><a href="#">中关村在线</a></li>
@@ -675,6 +738,171 @@
 	 	  	      </dl>
 	 	  </div>
 	 	  
+	 	  <div class="xiangqing clearfix">
+			 	    <div class="side-left">
+			 	    	    <div class="diannei">
+			 	    	    	   <h3>搜索店内商品</h3>
+			 	    	    	   <form>
+			 	    	    	   	   <p class="form-p">商品名： <input type="text" /></p>
+			 	    	    	   	   <p>价格： <input type="text" /> 到 <input type="text"/></p>
+			 	    	    	   	   <input class="input-text" type="button" value="搜索" />
+			 	    	    	   </form>
+			 	    	    </div>
+			 	    	    <div class="shoufeng">
+			 	    	    	   <h2>商品分类</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p  class="quanbu">查看全部商品</p>
+			 	    	    	   	   <p> <a href="#">  按关注  </a><a  href="#">  按价格  </a>  <a href="#"> 按时间 </a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>航拍仪(无人机)</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">小米</a></p>
+			 	    	    	   	   <p> > <a href="#">Samsung（三星）</a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>空气净化器</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">小米</a></p>
+			 	    	    	   </div>
+			 	    	    	  <h2>耳机</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">小米</a></p>
+			 	    	    	   	   <p> > <a href="#">MEIZU（魅族）</a></p>
+			 	    	    	   	   <p> > <a href="#">华为</a></p>
+			 	    	    	   </div>
+			 	    	    	  <h2>VR眼镜</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">HTC</a></p>
+			 	    	    	   	   <p> > <a href="#">deepoon（大朋）</a></p>
+			 	    	    	   </div>
+			 	    	    	  <h2>智能手环</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">华为</a></p>
+			 	    	    	   	   <p> > <a href="#">小米</a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>手机数据线</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">Apple（苹果）</a></p>
+			 	    	    	   	   <p> > <a href="#">Samsung（三星）</a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>手机充电器</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">Samsung（三星）</a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>手机数据线</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">Apple（苹果）</a></p>
+			 	    	    	   	   <p> > <a href="#">Samsung（三星）</a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>平板电脑</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">Samsung（三星）</a></p>
+			 	    	    	   	   <p> > <a href="#">Apple（苹果）</a></p>
+			 	    	    	   	   <p> > <a href="#">华为</a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>手机保护套</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">Samsung（三星）</a></p>
+			 	    	    	   	   <p> > <a href="#">华为</a></p>
+			 	    	    	   	   <p> > <a href="#">小米</a></p>
+			 	    	    	   </div>
+			 	    	    	   <h2>手机</h2>
+			 	    	    	   <div>
+			 	    	    	   	   <p> > <a href="#">HTC</a></p>	
+			 	    	    	   	   <p> > <a href="#">Samsung（三星）</a></p>
+			 	    	    	   	   <p> > <a href="#">荣耀</a></p>
+			 	    	    	   	   <p> > <a href="#">Pepsi（百事）</a></p>	
+			 	    	    	   	   <p> > <a href="#">QiKU（奇酷）</a></p>
+			 	    	    	   	   <p> > <a href="#">360</a></p>
+			 	    	    	   	   <p> > <a href="#">美图</a></p>	
+			 	    	    	   	   <p> > <a href="#">nubia（努比亚）</a></p>
+			 	    	    	   	   <p> > <a href="#">小米</a></p>
+			 	    	    	   	   <p> > <a href="#">乐视</a></p>
+			 	    	    	   	   <p> > <a href="#">vivo</a></p>	
+			 	    	    	   	   <p> > <a href="#">联想</a></p>
+			 	    	    	   	   <p> > <a href="#">OPPO</a></p>
+			 	    	    	   	   <p> > <a href="#">MEIZU（魅族）</a></p>
+			 	    	    	   	   <p> > <a href="#">ZTE（中兴）</a></p>
+			 	    	    	   	   <p> > <a href="#">华为</a></p>
+			 	    	    	   	   <p> > <a href="#">Apple（苹果）</a></p>
+			 	    	    	   </div>
+			 	    	    </div>
+			 	    	    
+			 	    	    <div class="cuxiao">
+			 	    	    	   <h3>促销信息</h3>
+			 	    	    	   <dl>
+			 	    	    	   	   <dt><img src="../img1/tuijian1.jpg"/></dt>
+			 	    	    	   	   <dd>
+			 	    	    	   	   	   <span>¥1228</span> 
+			 	    	    	   	   	   <del> ¥1293.00</del><br />
+			 	    	    	   	   	   <a href="#" >下单即送移动电源vivo V3 移动 联通 电信全网通 4G手机</a>
+			 	    	    	   	   </dd>
+			 	    	    	   </dl>
+			 	    	    	     <dl>
+			 	    	    	   	   <dt><img src="../img1/tuijian2.jpg"/></dt>
+			 	    	    	   	   <dd>
+			 	    	    	   	   	   <span>¥1498</span> 
+			 	    	    	   	   	   <del> ¥1577.00</del><br />
+			 	    	    	   	   	   <a href="#" >【国庆促销款】vivo V3Max 移动 联通 电信 全网通4G手机</a>
+			 	    	    	   	   </dd>
+			 	    	    	   </dl>  <dl>
+			 	    	    	   	   <dt><img src="../img1/tuijian3.jpg"/></dt>
+			 	    	    	   	   <dd>
+			 	    	    	   	   	   <span>¥2258 </span> 
+			 	    	    	   	   	   <del> ¥2377.00</del><br />
+			 	    	    	   	   	   <a href="#" >vivo X7 移动 联通 电信 全网通4GB运行内存64GB 机身内存</a>
+			 	    	    	   	   </dd>
+			 	    	    	   </dl>  <dl>
+			 	    	    	   	   <dt><img src="../img1/tuijian4.jpg"/></dt>
+			 	    	    	   	   <dd>
+			 	    	    	   	   	   <span>¥1798</span> 
+			 	    	    	   	   	   <del> ¥1893.00</del><br />
+			 	    	    	   	   	   <a href="#" >vivo X6S 全网通 4GB+64GB【移动电源+自拍杆+指环支架】</a>
+			 	    	    	   	   </dd>
+			 	    	    	   </dl>  <dl>
+			 	    	    	   	   <dt><img src="../img1/tuijian5.jpg"/></dt>
+			 	    	    	   	   <dd>
+			 	    	    	   	   	   <span>¥2988</span> 
+			 	    	    	   	   	   <del>¥3146.00</del><br />
+			 	    	    	   	   	   <a href="#" >vivo Xplay5 移动 联通 电信 全网通 双曲屏4GB手机</a>
+			 	    	    	   	   </dd>
+			 	    	    	   </dl>
+			 	    	    </div>
+			 	    </div>
+	 	    	 <div class="side-middle">
+	 	    	 	    <ul class="side-ul">
+	 	    	 	    	   <li>商品详情</li>
+	 	    	 	    	   <li>参数</li>
+	 	    	 	    	   <li>购买评价 <span> 1</span></li>
+	 	    	 	    	   <li>成交记录 <span> 6</span></li>
+	 	    	 	    	   <li>购买咨询</li>
+	 	    	 	    	   <li>购买咨询</li>
+	 	    	 	    	   <li>购买咨询</li>
+	 	    	 	    	   <li>商城服务承诺</li>
+	 	    	 	    	   <li><span>手机购买</span></li>
+	 	    	 	    </ul>
+	 	    	 	    <div class="taocan">
+	 	    	 	    	  <p><span>官方标配：</span>手机 x 1，电池（内置） x 1，充电器 x 1，USB线 x 1，快速指南 x 1，取卡针x 1，售后服务手册 x 1</p>
+	 	    	 	    	  <p><span>套装一：</span>官方标配+移动电源+指环支架</p>
+	 	    	 	    	  <p><span>套装二：</span>官方标配+硅胶套+指环支架</p>
+	 	    	 	    	  <p><span>套装三：</span>官方标配+移动电源+硅胶套+指环支架</p>
+	 	    	 	    </div>
+	 	    	 	    <ul>
+	 	    	 	    	   <li><img src="../img1/11products.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/1products.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products1.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products2.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products3.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products4.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products5.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products6.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products7.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products8.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products9.jpg"/></li>
+	 	    	 	    	   <li><img src="../img1/products10.jpg"/></li>
+	 	    	 	    </ul>
+	 	    	 </div>
+	 	  </div>
 	 	   
 	 	  
 	 	  

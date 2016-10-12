@@ -406,6 +406,21 @@
 	 
 }
 
+.datalist a{
+     display: block;
+	color: #44444c;
+	height: 48px;
+	width: 200px;
+	line-height: 21px;
+	margin-left: 20px;
+	overflow: hidden;
+}
+
+.datalist a:hover{
+         color: #FC1212;
+}
+
+
 .datalist p{
 	color: #44444c;
 	padding: 0 20px;

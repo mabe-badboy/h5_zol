@@ -97,7 +97,7 @@
 			  				      
 			  				     var $oDiv=$("<div/>").addClass("datalist"); 
 			  				    $("<img src='"+item.imgurl+"' />").appendTo($oDiv);
-			  				    $("<p>"+item.title+"</p>").appendTo($oDiv);
+			  				    $("<a href='xiangqing.html'>"+item.title+"</a>").appendTo($oDiv);
 			  				    $("<b>&yen;"+item.price+"</b>").appendTo($oDiv);  
 			  				    var $div1=$("<div class='xs-pj'></div>");
 			  				    $("<i class='xs'>销量数<span> "+item.xsl+"</span></i><i class='pj'>评价数 <span>"+item.pj+"</span></i>").appendTo($div1);
@@ -111,6 +111,7 @@
 			  	
 			  	$.ajax();
 			  	
+              
 			  	
 			  		// 懒加载效果
 			// 给window绑定scroll事件，当差不多滚动到底部是加载更多内容
@@ -119,10 +120,11 @@
 				var scrollTop = $(window).scrollTop();
 
 				// 当差不多滚动到底部是加载更多内容
-				if(scrollTop >= $(document).height() - $(window).height() - 300){
+				if(scrollTop >= $(document).height() - $(window).height() - 350){
 					$.ajax();
 				}
 			})
+
 
 			  });
 		</script>
@@ -442,10 +444,9 @@
 	 		       	      	   <li><span>家用设备/办公设备</span></li>
 	 		       	      	   <li><span>生活电器/个护/家用电器</span></li>
 	 		       	      </ul>
-	 		       	      <dl>
-	 		       	      	  <dt><img src="../img/time.png"/></dt>
-	 		       	      	  <dd>每日上新<br />限时抢</dd>
-	 		       	      </dl>
+	 		       	      <div>
+	 		       	      	  <img src="../img/timer.gif"/>
+	 		       	      </div>
 	 		       	    </div>    
 	 		       </div>
 	 		       

@@ -77,7 +77,7 @@
 	<div class="header">
 					<div class="header-1">
 						  <ul class="ul1">
-						  	   <li>商城首页</li>
+						  	   <li class="shouye">商城首页</li>
 						  	   <li><span>Hi`欢迎来到ZOL商城 , </span><a href="denglv.html" id="denglv"> 登录</a></li>
 						  	   <li><a href="#" class="tuichu">退出</a></li>
 						  </ul> 

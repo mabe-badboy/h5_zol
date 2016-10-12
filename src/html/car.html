@@ -38,7 +38,7 @@
      	       
      	       $("<span class='ss4'>958</span>").appendTo($div1);
      	       
-     	       $("<span class='ss5'><a href='#' id='bta'>删除</a></span>").appendTo($div1);
+     	       $("<span class='ss5'><a href='javascript:void(0)' class='bta'>删除</a></span>").appendTo($div1);
      	       
      	       $div1.appendTo($oDiv);
      	      $oDiv.appendTo(".list");
@@ -54,8 +54,15 @@
 			  	      if (str11) {
 			  	      	$deng.html(str11);
 			  	      }
-			  	     	   
+			  	     	
+			  	     
+			          $(".bta").on("click",function(){
+			          	  
+			          	       $(this).parent().parent().parent().remove();
+			          	
+			          });
 			          
+			      
 			  });
 		</script>
 	</head>
@@ -116,14 +123,14 @@
 	 	                       <span class="ss2">1</span>
 	 	                       <span class="ss3">--</span>
 	 	                       <span class="ss4">958</span>
-	 	                       <span class="ss5"><a href="#" id="bta">删除</a></span>
+	 	                       <span class="ss5"><a href="#" class="bta">删除</a></span>
 	 	                </div>
 	 	     
 	 	     </div>-->
 	 	     
 	 	
 	 </div>
-	     <p class="op">商品总价（不含运费）：<span id="zj">¥0</span></p>
+	  <!--   <p class="op">商品总价（不含运费）：<span id="zj">¥0</span></p>-->
 	 <p class="p2">
 	 	   <label><input type="checkbox" checked="checked" />全选</label>
 	 	   <a href="javescript:void(0)">批量删除</a>

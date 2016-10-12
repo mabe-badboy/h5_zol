@@ -12,13 +12,14 @@
 			  $(function(){
 			  	     
 			  	      var $btn=$("#btn");
-			  	             	
+			  	    
+			  	        
+			  	      $btn.on("click",function(){
+			  	      	         	
 			  	           var str=getCookie("user");
 			  	      //       console.log(str);
 			  	        var    arr=JSON.parse(str);
 			  	        
-			  	      $btn.on("click",function(){
-			  	      	
 			  	      	   var $username=$("#username").val();
 			  	      	   var $pass=$(".pass").val();
 			  	    
@@ -34,7 +35,7 @@
 			  	      	   	      console.log($username);
 			  	      	   	       if ($username==item.username && $pass==item.pass) {
 			  	      	   	       	      alert("登录成功！");
-			  	      	   	       	    addCookie("user1",JSON.stringify($username),7);
+			  	      	   	       	    addCookie("user1",JSON.stringify($username),7,'/');
 			  	      	   	       	     location.href="../index.html";
 			  	      	   	       }else{
 			  	      	   	           	alert("登录失败！");
@@ -42,6 +43,41 @@
 			  	      	   });
 			  	      	  
 			  	      });
+			  	      
+			  	      //键盘监听事件  回车键 登录
+			  	      $(document).on("keydown",function(e){
+			  	      	                
+			  	      	             var   e= e || event ;
+			  	      	              
+			  	      	           if (e.keyCode==13) {
+					  	      	           	     	         	
+					  	           var str=getCookie("user");
+					  	      //       console.log(str);
+					  	        var    arr=JSON.parse(str);
+					  	        
+					  	      	   var $username=$("#username").val();
+					  	      	   var $pass=$(".pass").val();
+					  	      	           	
+					  	      	           		
+					  	      	   $.each(arr,function(idx,item){
+					  	      	   	      console.log($username);
+					  	      	   	       if ($username==item.username && $pass==item.pass) {
+					  	      	   	       	      alert("登录成功！");
+					  	      	   	       	    addCookie('user1',JSON.stringify($username),7,'/');
+					  	      	   	       	     location.href="../index.html";
+					  	      	   	       }else{
+					  	      	   	           	alert("登录失败！");
+					  	      	          }
+					  	      	   });
+					  	      	           	
+			  	      	           	
+			  	      	           }else{
+			  	      	           	   return;
+			  	      	           }
+			  	      	 
+			  	      	
+			  	      });
+			  	      
 			  	      
 			  });
 		</script>

@@ -62,6 +62,18 @@
 			          	
 			          });
 			          
+			        $(".tuichu").on("click",function(){
+			        	  
+			        	    $("#denglv").html("登录");
+			        	
+			        });
+			      
+			      $(".shouye").on("click",function(){
+			      	
+			      	      location.href="../index.html";
+			      	
+			      });
+			      
 			      
 			  });
 		</script>
@@ -70,9 +82,9 @@
 	<div class="header">
 					<div class="header-1">
 						  <ul class="ul1">
-						  	   <li>商城首页</li>
+						  	   <li class="shouye">商城首页</li>
 						  	   <li><span>Hi`欢迎来到ZOL商城 , </span><a href="denglv.html" id="denglv"> 登录</a></li>
-						  	   <li><a href="html/zhuce.html">退出</a></li>
+						  	   <li><a href="javascript:void(0)" class="tuichu">退出</a></li>
 						  </ul> 
 						  <ul class="ul2">
 						  	     <li><a hrel="#">我的订单</a></li>

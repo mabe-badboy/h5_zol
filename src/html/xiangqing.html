@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>详情</title>
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/base.css" />
 		<link rel="stylesheet" href="../css/liebiao.css" />
@@ -211,6 +211,9 @@
 			  var $car_1=$("#car");
 			  
 			  
+			  //创建一个数组存入数据
+			  var arr=[];
+			  
 			  $Btn2.on("click",function(){
 			  	
 			  	   //克隆一下图片
@@ -247,8 +250,27 @@
 			  	   	     		   var $str2=$car_1.html();
 			  	   	     		   $str2++;
 			  	   	     		 $car_1.html($str2);  
+			  	   	     		 
 			  	  	
 			  	  });
+			  	  
+			  	   
+			  	   	     		 //创建cookie存入商品数据
+			  	   	     	var $src=$("#glass-img").attr("src");
+			  	   	     	var $jg=$("#jg").html();
+			  	   	     	var $dp=$("#dp").html();
+			  	   	     	var $title=$("#title").html();
+			  	   	     	
+			  	   	     	
+			  	   	     	var obj={};
+			  	   	     	
+			  	   	       obj.src=$src;	 
+			  	           obj.price=$jg;	
+			  	           obj.dp=$dp;	
+			  	           obj.title=$title;	
+			  	  
+			  	           arr.push(obj);
+			  	           addCookie("goods",JSON.stringify(arr),7);
 			  	
 			  });
 			  
@@ -268,6 +290,29 @@
 			 $(".side-ul li:lt(8)").on("click",function(){
 			 	     $(this).addClass("acli").siblings().removeClass("acli");
 			 });
+			 
+			 
+			//点击进入购物车页面
+           $(".right-car").on("click",function(){
+           	
+           	       location.href="car.html"
+           	
+           });
+
+           
+			  	     //改变用户名
+			  	    var $deng=$("#denglv");
+			  	     var str123=getCookie("user1");
+			  	     var str11=JSON.parse(str123);
+			  	      if (str11) {
+			  	      	$deng.html(str11);
+			  	      }
+			  	     	 
+           
+           
+           
+			 
+			 
 			 
 	 });
 		</script>
@@ -638,10 +683,10 @@
 	 	 	</div>
 	 	 	
 	 	 	<div class="introduce">
-	 	 		  <p class="introduce-p">【暑期免费送玩偶 套装送移动电源+自拍杆+手环支架 】华为 畅享5S 全网通 2GB+16GB 标准屏5.0英寸 前置500万像素后1
-	 	 		     <br/><span>套装移动电源+硅胶套+指环支架</span>
+	 	 		  <p class="introduce-p">【暑期免费送玩偶 套装送移动电源+自拍杆+手环支架 】<b id="title">华为 畅享5S 全网通 2GB+16GB 标准屏5.0英寸 前置500万像素后1
+	 	 		     </b><br/><span>套装移动电源+硅胶套+指环支架</span>
 	 	 		  </p>
-	 	 		  <h3 class="introduce-price">价  &nbsp;  格 ： <span>&yen;988.00</span></h3>
+	 	 		  <h3 class="introduce-price">价  &nbsp;  格 ： <span id="jg">&yen;988.00</span></h3>
 	 	 	      <dl class="peisong">
 	 	 	      	 <dt>配  &nbsp;  送 ：</dt>
 	 	 	      	 <dd><span>广东</span>可配送，<strong>顺丰包邮</strong></dd>
@@ -656,7 +701,7 @@
 	 	 	      </dl>
 	 	 	      <dl class="server">
 	 	 	      	  <dt>服务保障 ：</dt>
-	 	 	      	  <dd>由 <a href="#">盛通数码专营店</a> 发货并承诺提供以下服务保障</dd>
+	 	 	      	  <dd>由 <a href="#" id="dp">盛通数码专营店</a> 发货并承诺提供以下服务保障</dd>
 	 	 	      	  <dd class="server-dd">
 	 	 	      	  	<span class="server-span1">行货保证</span>
 	 	 	      	  	<span class="server-span2">发票保障</span>

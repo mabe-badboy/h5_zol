@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>购物车</title>
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/car.css" />
 		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
@@ -10,7 +10,51 @@
 		<script>
 			  $(function(){
 			  
-			         
+             var str=getCookie("goods");
+              
+               var str1=JSON.parse(str);
+              
+                console.log(str1);
+              
+             $.each(str1, function(idx,item) {
+             	    
+     	      var $oDiv=$("<div/>").addClass("goods");
+     	     
+     	       $("<h2><input type='checkbox' id='check'  checked='checked'/><span>店铺：</span><a href=''#' id='dianpu'>"+item.dp+"</a><img src='../img1/qq.jpg' /> </h2>").appendTo($oDiv) ; 
+     	       var $div1=$(" <div/>").addClass("goods-list");
+     	       
+     	        $("<input type='checkbox' checked='checked' />").appendTo($div1);
+     	        
+     	        $("<img src='"+item.src+"' />").appendTo($div1);
+     	        
+     	        $(" <div class='title'><a href='#'>"+item.title+"</a><p>颜色：黑色行货16GB</p><p>套装：官方标配</p></div>").appendTo($div1);
+     	        
+     	       $("<span class='ss1'>"+item.price+"</span>").appendTo($div1);
+     	       
+     	       $("<span class='ss2'>1</span>").appendTo($div1);
+     	       
+     	       
+     	        $("<span class='ss3'>--</span>").appendTo($div1);
+     	       
+     	       $("<span class='ss4'>958</span>").appendTo($div1);
+     	       
+     	       $("<span class='ss5'><a href='#' id='bta'>删除</a></span>").appendTo($div1);
+     	       
+     	       $div1.appendTo($oDiv);
+     	      $oDiv.appendTo(".list");
+     	      
+     	      
+             });
+			        
+			      
+			  	     //改变用户名
+			  	    var $deng=$("#denglv");
+			  	     var str123=getCookie("user1");
+			  	     var str11=JSON.parse(str123);
+			  	      if (str11) {
+			  	      	$deng.html(str11);
+			  	      }
+			  	     	   
 			          
 			  });
 		</script>
@@ -53,7 +97,7 @@
 	 	     </ul>
 	 	     
 	 	     <!--    购物车       -->
-	 	     <div class="goods">
+	 	     <!--<div class="goods">
 	 	     
 	 	                 <h2>
 	 	                 <input type="checkbox" id="check"  checked="checked"/><span>店铺：</span><a href="#" id="dianpu">盛通数码专营店</a>
@@ -75,11 +119,11 @@
 	 	                       <span class="ss5"><a href="#" id="bta">删除</a></span>
 	 	                </div>
 	 	     
-	 	     </div>
+	 	     </div>-->
 	 	     
-	 	     <p class="op">商品总价（不含运费）：<span id="zj">¥0</span></p>
+	 	
 	 </div>
-	
+	     <p class="op">商品总价（不含运费）：<span id="zj">¥0</span></p>
 	 <p class="p2">
 	 	   <label><input type="checkbox" checked="checked" />全选</label>
 	 	   <a href="javescript:void(0)">批量删除</a>

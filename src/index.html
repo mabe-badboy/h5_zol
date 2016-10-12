@@ -105,10 +105,11 @@
 			  	     //改变用户名
 			  	    var $deng=$("#denglv");
 			  	     var str123=getCookie("user1");
-			  	       console.log(str123);
-			 	     if (str123) {
-			  	     	 $deng.html(str123);
-		  	     }
+			  	     var str11=JSON.parse(str123);
+			  	      if (str11) {
+			  	      	$deng.html(str11);
+			  	      }
+			  	     	 
 			  	    
 			  	
 			  });

@@ -2,12 +2,13 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>列表(懒加载)</title>
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/base.css" />
 		<link rel="stylesheet" href="../css/liebiao.css" />
 		<link rel="stylesheet" href="../xcarousel/jquery.xcarousel.css" />
 		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
 		<script type="text/javascript" src="../xcarousel/jquery.xcarousel.js" ></script>
 		<script>
 			  $(function(){
@@ -126,6 +127,17 @@
 			})
 
 
+
+			  	     //改变用户名
+			  	    var $deng=$("#denglv");
+			  	     var str123=getCookie("user1");
+			  	     var str11=JSON.parse(str123);
+			  	      if (str11) {
+			  	      	$deng.html(str11);
+			  	      }
+			  	     	 
+
+
 			  });
 		</script>
 	</head>
@@ -133,9 +145,9 @@
 			<div class="header">
 		<div class="header-1">
 			  <ul class="ul1">
-			  	   <li>商城首页</li>
-			  	   <li><span>Hi`欢迎来到ZOL商城 , </span><a href="html/denglv.html" id="denglv"> 登录</a></li>
-			  	   <li><a href="html/zhuce.html">退出</a></li>
+			  	   <li id="shouye"><a href="index.html" style="color: #333;">商城首页</a></li>
+			  	   <li><span>Hi`欢迎来到ZOL商城 , </span><a href="denglv.html" id="denglv"> 登录</a></li>
+			  	   <li><a href="../index.html">退出</a></li>
 			  </ul> 
 			  <ul class="ul2">
 			  	     <li><a hrel="#">我的订单</a></li>

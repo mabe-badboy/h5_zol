@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>登录</title>
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/login.css" />
 		<link rel="stylesheet" href="../css/enter.css" />
@@ -34,7 +34,7 @@
 			  	      	   	      console.log($username);
 			  	      	   	       if ($username==item.username && $pass==item.pass) {
 			  	      	   	       	      alert("登录成功！");
-			  	      	   	       	    addCookie("user1",$username,7);
+			  	      	   	       	    addCookie("user1",JSON.stringify($username),7);
 			  	      	   	       	     location.href="../index.html";
 			  	      	   	       }else{
 			  	      	   	           	alert("登录失败！");

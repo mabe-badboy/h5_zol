@@ -260,7 +260,6 @@
 			  	   	     	var $jg=$("#jg").html();
 			  	   	     	var $dp=$("#dp").html();
 			  	   	     	var $title=$("#title").html();
-			  	   	     	var $num=$("#num").val();
 			  	   	     	
 			  	   	     	var obj={};
 			  	   	     	
@@ -268,8 +267,6 @@
 			  	           obj.price=$jg;	
 			  	           obj.dp=$dp;	
 			  	           obj.title=$title;	
-			  	           obj.num=$num;
-			  	           obj.price1=$jg*$num;
 			  	  
 			  	           arr.push(obj);
 			  	           addCookie("goods",JSON.stringify(arr),7);

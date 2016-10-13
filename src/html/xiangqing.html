@@ -260,7 +260,7 @@
 			  	   	     	var $jg=$("#jg").html();
 			  	   	     	var $dp=$("#dp").html();
 			  	   	     	var $title=$("#title").html();
-			  	   	     	
+			  	   	     	var $num=$("#num").val();
 			  	   	     	
 			  	   	     	var obj={};
 			  	   	     	
@@ -268,6 +268,8 @@
 			  	           obj.price=$jg;	
 			  	           obj.dp=$dp;	
 			  	           obj.title=$title;	
+			  	           obj.num=$num;
+			  	           obj.price1=$jg*$num;
 			  	  
 			  	           arr.push(obj);
 			  	           addCookie("goods",JSON.stringify(arr),7);
@@ -308,11 +310,15 @@
 			  	      	$deng.html(str11);
 			  	      }
 			  	     	 
-             $(".tuichu").on("click",function(){
+            	     	 
+			  	     $(".tuichu").on("click",function(){
 			        	  
 			        	    $("#denglv").html("登录");
+			        	     
+			        	     removeCookie("user1");
 			        	
 			        });
+			      
            
            
 			 
@@ -738,7 +744,7 @@
 	 	           	  <dd>
 	 	           	  	<p>
 	 	           	  	<span class="jian"></span>
-	 	           	  	<input id="shuliang" type="text" value="1" title="请输入购买数量"/>
+	 	           	  	<input id="num" type="text" value="1" title="请输入购买数量"/>
 	 	           	  	<span class="jia"></span>
 	 	           	  	</p> &nbsp;件，限购（20件）
 	 	           	  </dd>

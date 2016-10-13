@@ -20,7 +20,7 @@
              	    
      	      var $oDiv=$("<div/>").addClass("goods");
      	     
-     	       $("<h2><input type='checkbox' id='check'  checked='checked'/><span>店铺：</span><a href=''#' id='dianpu'>"+item.dp+"</a><img src='../img1/qq.jpg' /> </h2>").appendTo($oDiv) ; 
+     	       $("<h2><input type='checkbox' id='check'  checked='checked'/><span>店铺：</span><a href='#' id='dianpu'>"+item.dp+"</a><img src='../img1/qq.jpg' /> </h2>").appendTo($oDiv) ; 
      	       var $div1=$(" <div/>").addClass("goods-list");
      	       
      	        $("<input type='checkbox' checked='checked' />").appendTo($div1);
@@ -36,7 +36,7 @@
      	       
      	        $("<span class='ss3'>--</span>").appendTo($div1);
      	       
-     	       $("<span class='ss4'>958</span>").appendTo($div1);
+     	       $("<span class='ss4'>"+item.price+"</span>").appendTo($div1);
      	       
      	       $("<span class='ss5'><a href='javascript:void(0)' class='bta'>删除</a></span>").appendTo($div1);
      	       
@@ -45,8 +45,7 @@
      	      
      	      
              });
-			        
-			      
+
 			  	     //改变用户名
 			  	    var $deng=$("#denglv");
 			  	     var str123=getCookie("user1");
@@ -62,9 +61,12 @@
 			          	
 			          });
 			          
-			        $(".tuichu").on("click",function(){
+			     	     	 
+			  	     $(".tuichu").on("click",function(){
 			        	  
 			        	    $("#denglv").html("登录");
+			        	     
+			        	     removeCookie("user1");
 			        	
 			        });
 			      

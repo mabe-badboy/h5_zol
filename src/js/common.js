@@ -168,6 +168,14 @@ function getCookie(name){
 
 
 
+//删除cookie
+function removeCookie(name){
+	var d = new Date(); 
+	document.cookie = name+"=;expires="+d;
+	return document.cookie;
+	
+}
+
 
 
 

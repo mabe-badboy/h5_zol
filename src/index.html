@@ -110,6 +110,15 @@
 			  	      	$deng.html(str11);
 			  	      }
 			  	     	 
+			  	     $(".tuichu").on("click",function(){
+			        	  
+			        	    $("#denglv").html("登录");
+			        	     
+			        	     removeCookie("user1");
+			        	
+			        });
+			      
+			   
 			  	    
 			  	
 			  });
@@ -121,7 +130,7 @@
 			  <ul class="ul1">
 			  	   <li>商城首页</li>
 			  	   <li><span>Hi`欢迎来到ZOL商城 , </span><a href="html/denglv.html" id="denglv"> 登录</a></li>
-			  	   <li><a href="html/zhuce.html">免费注册</a></li>
+			  	   <li><a href="javascript:void(0)" class="tuichu">退出</a></li>
 			  </ul> 
 			  <ul class="ul2">
 			  	     <li><a hrel="#">我的订单</a></li>
